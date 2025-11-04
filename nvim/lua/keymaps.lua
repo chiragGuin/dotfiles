@@ -11,6 +11,8 @@ vim.keymap.set("n", "<C-gp>", ":Gitsigns toggle_current_line_blame<CR>", { desc 
 
 vim.keymap.set("n", "<leader>gad", ":Git add .<CR>", { desc = "Git add current directory" })
 vim.keymap.set("n", "<leader>gaf", ":Git add %<CR>", { desc = "Git add current file"  })
+vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { desc = "Git push" })
+vim.keymap.set("n", "<leader>gpu", ":Git push -u origin main<CR>", { desc = "Git push and set upstream" })
 vim.keymap.set("n", "<leader>gc", function()
   local msg = vim.fn.input("Commit message: ")
   if msg ~= "" then
@@ -19,12 +21,6 @@ vim.keymap.set("n", "<leader>gc", function()
     print("Commit aborted: empty message")
   end
 end, { desc = "Git commit with message" })
-vim.keymap.set("n", "<leader>gp", function()
-  vim.cmd("Git push")
-end, { desc = "Git push" })
-vim.keymap.set("n", "<leader>gpu", function()
-  vim.cmd("Git push -u origin main")
-end, { desc = "Git push and set upstream" })
 
 -- ====================================================================
 --                           neo-tree.nvim
