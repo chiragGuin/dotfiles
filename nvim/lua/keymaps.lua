@@ -2,15 +2,15 @@
 --                          gitsigns.nvim
 -- ====================================================================
 
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
+vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Hunk preview" })
+vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
 
 -- ====================================================================
 --                          gitsigns.nvim
 -- ====================================================================
 
-vim.keymap.set("n", "<leader>gad", ":Git add .<CR>", {})
-vim.keymap.set("n", "<leader>gaf", ":Git add %<CR>", {})
+vim.keymap.set("n", "<leader>gad", ":Git add .<CR>", { desc = "Git add current directory" })
+vim.keymap.set("n", "<leader>gaf", ":Git add %<CR>", { desc = "Git add current file"  })
 vim.keymap.set("n", "<leader>gc", function()
   local msg = vim.fn.input("Commit message: ")
   if msg ~= "" then
@@ -19,12 +19,18 @@ vim.keymap.set("n", "<leader>gc", function()
     print("Commit aborted: empty message")
   end
 end, { desc = "Git commit with message" })
+vim.keymap.set("n", "<leader>gp", function()
+  vim.cmd("Git push")
+end, { desc = "Git push" })
+vim.keymap.set("n", "<leader>gpu", function()
+  vim.cmd("Git push -u origin main")
+end, { desc = "Git push and set upstream" })
 
 -- ====================================================================
 --                           neo-tree.nvim
 -- ====================================================================
 
-vim.keymap.set("n", "<C-f>", ":Neotree filesystem reveal left<CR>", {})
+vim.keymap.set("n", "<C-f>", ":Neotree filesystem reveal left<CR>", { desc = " Reveal Filesystem" })
 
 -- ====================================================================
 --                             conform.lua
