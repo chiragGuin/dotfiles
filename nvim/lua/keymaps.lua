@@ -2,11 +2,11 @@
 --                          gitsigns.nvim
 -- ====================================================================
 
-vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", { desc = "Hunk preview" })
-vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
+vim.keymap.set("n", "<C-gp>", ":Gitsigns preview_hunk<CR>", { desc = "Hunk preview" })
+vim.keymap.set("n", "<C-gp>", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
 
 -- ====================================================================
---                          gitsigns.nvim
+--                               git
 -- ====================================================================
 
 vim.keymap.set("n", "<leader>gad", ":Git add .<CR>", { desc = "Git add current directory" })
