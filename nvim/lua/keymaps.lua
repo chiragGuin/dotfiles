@@ -6,6 +6,21 @@ vim.keymap.set("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
 vim.keymap.set("n", "<leader>gt", ":Gitsigns toggle_current_line_blame<CR>", {})
 
 -- ====================================================================
+--                          gitsigns.nvim
+-- ====================================================================
+
+vim.keymap.set("n", "<leader>gad", ":Git add .<CR>", {})
+vim.keymap.set("n", "<leader>gaf", ":Git add %<CR>", {})
+vim.keymap.set("n", "<leader>gc", function()
+  local msg = vim.fn.input("Commit message: ")
+  if msg ~= "" then
+    vim.cmd("Git commit -m \"" .. msg .. "\"")
+  else
+    print("Commit aborted: empty message")
+  end
+end, { desc = "Git commit with message" })
+
+-- ====================================================================
 --                           neo-tree.nvim
 -- ====================================================================
 
