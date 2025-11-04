@@ -17,9 +17,5 @@ return {
 			},
 		})
 
-		-- Optional: keymap to manually trigger formatting
-		vim.keymap.set({ "n", "v" }, "<leader>f", function()
-			require("conform").format({ async = true, lsp_fallback = true })
-		end, { desc = "Format code" })
 	end,
 }

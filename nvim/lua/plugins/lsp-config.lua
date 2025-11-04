@@ -13,19 +13,6 @@ return {
       callback = function(ev)
         local opts = { buffer = ev.buf, silent = true }
 
-        -- Essential keymaps only
-        vim.keymap.set("n", "gR", "<cmd>Telescope lsp_references<CR>", opts)
-        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-        vim.keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
-        vim.keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts)
-        vim.keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts)
-        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
       end,
     })
 
