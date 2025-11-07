@@ -4,10 +4,6 @@
 
 local gs = require("gitsigns")
 
-vim.keymap.set("n", "<leader>gh", ":Gitsigns preview_hunk<CR>", { desc = "Hunk preview" })
-vim.keymap.set("n", "<leader>gb", ":Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle current line blame" })
-
-
 -- Navigation
 vim.keymap.set("n", "<leader>gn", function()
 	if vim.wo.diff then
@@ -32,7 +28,6 @@ vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { desc = "Reset hunk" })
 vim.keymap.set("v", "<leader>gs", function()
 	gs.stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
 end, { desc = "Stage selected hunk" })
-
 vim.keymap.set("v", "<leader>gr", function()
 	gs.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 end, { desc = "Reset selected hunk" })
